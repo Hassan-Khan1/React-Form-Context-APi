@@ -7,19 +7,20 @@ import { Route, Switch } from 'react-router-dom';
 import Login from './Pages/Login';
 import DashBoard from './Pages/WatchMates';
 import { FormProvider } from './Context/FormContext'
+import { Login as Login11 } from './Pages/Login';
 
 function App() {
   return (
-    // <FormProvider>
     <FormProvider>
+      {/* <Login11> */}
       <Switch>
         <Route path='/Login' component={Login} />
         <Route path='/' component={DashBoard} />
 
       </Switch>
-    </FormProvider>
+      {/* // </Login11> */}
 
-    // </>
+    </FormProvider>
   )
 };
 export default App;

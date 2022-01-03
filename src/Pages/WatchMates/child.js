@@ -1,11 +1,19 @@
 import React, { useContext } from 'react'
-import { FormContext } from '../../Context/FormContext'
+import { FormContext111 } from '../Login'
+import {FormContext} from '../../Context/FormContext'
+
 
 export const Child = () => {
-  const { name } = useContext(FormContext)
+  const { data, setData } = useContext(FormContext)
+
+  // const { name } = useContext(FormContext111)
   return (
     <div>
-      this is child {name}
+
+      Username : {data.username}
+      {/* <br> */}
+      {/* PassWord {data.password} */}
+
     </div>
   )
 }

@@ -7,31 +7,36 @@ import { useHistory } from 'react-router-dom';
 import { FormContext } from '../../Context/FormContext';
 
 // console.log(name)
+// const FormContext111 = createContext({})
 
 const Login = () => {
   const history = useHistory();
 
-  const {data,setData} = useContext(FormContext)
+  const { data, setData } = useContext(FormContext)
+  let name = 'hassan'
 
-  // const [data, setdata] = useState({
-  //   username: '',
+  // const [data, setData] = useState({
+  //   username: 'Saad',
   //   Password: '',
   // });
-  console.log("Data ; ", data)
+  // console.log("Data ; ", data)
 
-  const onChange = (vals) => {
+  const onChange = (value) => {
     // setcounter(event.target.value);
-    console.log('Username : PassWord', vals)
-    setData(vals);
+    console.log('Username : PassWord', value)
+    setData(value);
     history.push('/');
 
   };
-
-
+  console.log('data : ',data)
 
   return (
-    <div className='Login'>
 
+
+
+
+    <div className='Login'>
+      {/* <FormContext111.Provider value={{ data, setData, name }}> */}
       <PageHeader
         className="site-page-header"
         onBack={() => null}
@@ -44,7 +49,7 @@ const Login = () => {
           name="username"
           rules={[{ required: true, message: 'Please input your username!' }]}
         >
-          <Input />
+          <Input value={data.username} />
         </Form.Item>
 
         <Form.Item
@@ -65,13 +70,14 @@ const Login = () => {
           </Button>
         </Form.Item>
       </Form>
+      {/* </FormContext111.Provider> */}
 
     </div>
 
   );
 }
 export default Login;
-// export { for };
+// export { FormContext111, Login };
 
 
 
